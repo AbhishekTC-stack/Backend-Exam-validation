@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q9</title>
+</head>
+<body>
+
+
+        Name: <input id="n"> <br><br>
+        Mark: <input id="m" type="number"> <br><br>
+        <button type="submit" onclick="add()">Submit</button>
+        <button type="button" onclick="avg()">Class Average</button>
+
+    <p id="res"></p>
+
+    <script>
+        let names = [];
+        let marks = [];
+
+        function add() {
+            let name = document.getElementById("n").value;
+            let mark = Number(document.getElementById("m").value);
+            let grade = "";
+
+            names.push(name);
+            marks.push(mark);
+
+            switch (true) {
+                case (mark >= 90):
+                    grade = "A+";
+                    break;
+                case (mark >= 80 && mark<90):
+                    grade = "A";
+                    break;
+                case (mark >= 70 && mark<80):
+                    grade = "B+";
+                    break;
+                case (mark >= 60 && mark<70):
+                    grade = "C+";
+                    break;
+                case (mark >= 50 && mark<60):
+                    grade = "C";
+                    break;
+                default:
+                    grade = "Below 50%";
+            }
+
+            document.getElementById("res").innerHTML = name + "'s Grade: " + grade;
+            
+            document.getElementById("n").value = "";
+            document.getElementById("m").value = "";
+        }
+
+        function avg() {
+            let total = 0;
+            for(let x of marks) total += x;
+            let result = marks.length > 0 ? (total / marks.length) : 0;
+            document.getElementById("res").innerHTML = "Class Average: " + result;
+        }
+    </script>
+
+</body>
+</html>

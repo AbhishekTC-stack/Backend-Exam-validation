@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function basicMapArray(){
+            let map = new Map();
+            map.set('name', ['Ram','Raj','Akbar']);
+            map.set('age', 25);
+
+            let names = map.get('name');  
+            let age = map.get('age');
+
+            document.getElementById('getNames').innerHTML = 
+                'Names: ' + names.join(', ');
+
+            document.getElementById('getAge').innerHTML =
+                'Age: ' + age;
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Map with array elements</h1>
+    <button onclick="basicMapArray()">Show Operations</button>
+
+    <div id="getNames"></div>
+    <div id="getAge"></div>
+
+</body>
+</html>

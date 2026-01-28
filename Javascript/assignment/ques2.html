@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>Q2</title>
+</head>
+<body>
+
+    Name:
+    <input type="text"><br><br>
+
+    Address:
+    <textarea></textarea><br><br>
+
+    Degree:
+    <input type="radio" name="degree" onclick="hideDropdown()"> Btech
+    <input type="radio" name="degree" onclick="hideDropdown()"> Mtech
+    <input type="radio" name="degree" onclick="hideDropdown()"> MCA
+    <input type="radio" name="degree" onclick="showDropdown()"> Others
+    <br><br>
+
+    <div id="otherDegree">
+        Select Degree:
+        <select>
+            <option>BCA</option>
+            <option>PGDCA</option>
+            <option>BCom</option>
+            <option>MPhil</option>
+        </select>
+    </div>
+
+    <script>
+        function showDropdown() {
+            document.getElementById("otherDegree").style.display = "block";
+        }
+
+        function hideDropdown() {
+            document.getElementById("otherDegree").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

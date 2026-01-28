@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+</head>
+<body>
+
+Enter side of square:
+<input type="number" id="s"><br><br>
+
+<button onclick="square()">Area of square</button>
+
+<p id="result1"></p>
+
+Enter the length:
+<input type="number" id="a"><br><br>
+Enter the breadth:
+<input type="number" id="b"><br><br>
+
+
+<button onclick="rectangle()">Area of rectangle</button>
+
+<p id="result2"></p>
+
+Enter the radius:
+<input type="number" id="r"><br><br>
+
+<button onclick="circle()">Area of circle</button>
+
+<p id="result3"></p>
+
+<script>
+function square() {
+    let side = s.value;
+    result1.innerHTML = "Area = " + (side * side);
+}
+function rectangle() {
+    let length = a.value;
+    let breadth = b.value;
+
+    result2.innerHTML = "Area = " + (length * breadth);
+}
+function circle() {
+    let radius = r.value;
+    result3.innerHTML = "Area = " + (3.14*radius * radius);
+}
+</script>
+
+</body>
+</html>

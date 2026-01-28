@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><u>JSday 6 String</u></h1>
+    <script>
+        let a="My name is Adarsh Sivan T K"
+        document.write("<br><b>Length of the given string is = </b> ",a.length)
+         document.write("<br><br><b>The Substring is : </b>")
+         ///////REVERSE///////////
+        for(i=3;i<8;i++){
+            document.write(a[i])
+        }
+
+            document.write("<b><br>Reverse of the Substring is : </b>")
+        for(i=7;i>2;i--){
+            document.write(a[i])
+        } 
+
+
+        ///SLICE,SUBSTRING AND SUBSTR
+
+
+        document.writeln("<br><br>The substring is(slice) : ",a.slice(11,24))
+        document.writeln("<br>The substring is(slice) : ",a.slice(11))
+        document.writeln("<br>The substring is(slice) : ",a.slice(-11))
+        document.writeln("<br>The substring is(slice) : ",a.slice(-24,-11))
+        document.writeln("<br>The substring is (substring) : ",a.substring(11,24))
+        document.writeln("<br>The substring is (substr): ",a.substr(11,13))
+        
+        
+        /////////UPPERCASE/////////////////
+        document.writeln("<br>The string in uppercase : ",a.toUpperCase())
+        /////////LOWERCASE///////////////////////////
+        document.writeln("<br>The string in uppercase : ",a.toLowerCase())
+
+        /////////CONCATENTE///////////////////
+        document.writeln("<br>")
+        document.writeln("<br>")
+        
+        document.writeln(a.concat(", a web designer and developer"))
+
+
+
+        ///////////TRIMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM////
+
+        let t="          hello world              "
+        document.writeln("<br>The trimmed word is : ",t.trim())
+        
+        ////////////SPLITTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT/////////////
+
+            let url="www.kba.ac.in"
+        document.writeln("<br>The trimmed word is : ",url.split('.'))
+        
+        //////REPLACEEEEEEEEEEEEEEEEEEEE/////////////
+        let string="Hello, welcome to Java Script"
+        document.writeln("<br><br> <b>The string is : </b>",string) 
+        let replaced=string.replace("Java Script","CSS")   
+        document.writeln("<br><br> <b>The replaced string is : </b> ",replaced) 
+
+        /////////SEARCH///////////////////////
+
+        let str="Hello, welcome to Java Script"
+        document.write(str.search("welcome")) 
+        
+        k="hello"
+        j=""
+        document.write("<br><br> <b>The given string is :</b> ",k) 
+
+        for(i=4;i>=0;i--){
+
+            j+=k[i]
+        }
+        document.write("<br><b>Reverse of the sting is </b>: ",j) 
+
+        
+        ///TWO  DIMENTIONAL ARRAY
+                document.write("<br>")
+
+            a=[[1,2,3],[4,5,6],[7,8,9]]
+
+         for(i=0; i<3; i++){
+            for(j=0;j<3;j++){
+                document.write(a[i][j])
+            }
+                document.write("<br>")
+
+         }
+
+        // 2D array without declaring initially
+         b=[[],[],[]]
+        for(i=0;i<3;i++){
+            for(j=0;j<2;j++){
+                b[i][j]=i
+            }
+        }
+        for(i=0;i<3;i++){
+            document.write("<br>")
+                for(j=0;j<2;j++){
+                b[i][j]=i
+                document.write(b[i][j]) 
+            }
+        }
+/////////////////////////////////////////////////
+
+
+        a=[[1,2,3],[4,5,3],[2,1,1]]
+        b=[[2,3,4],[3,4,5],[2,1,1]]  
+        
+        document.write("<br><br><br>")
+        for(i=0;i<a.length;i++){
+            for(j=0;j<b.length;j++){
+               
+                // document.write("",a[i][j])
+                // document.write("",b[i][j])
+                sum=a[i][j]+b[i][j]
+                if(a.length==b.length){
+                    document.write(" ",sum)
+                }
+                else{
+                    document.write(" Cannot add these ")
+                }
+                
+            } 
+            
+            document.write("<br>")
+        }
+        document.write("<br>",a.length)
+            
+        
+        ///////////////FOR IN AND FOR OF
+
+
+            for(x in e){
+                e[x]=e[x+5]
+            }
+            for(x of e){
+                e[x]=e[x+5]
+            }
+
+        
+
+
+
+    </script>
+</body>
+</html>

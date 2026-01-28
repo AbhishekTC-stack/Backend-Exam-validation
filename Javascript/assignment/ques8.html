@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8</title>
+</head>
+<body>
+
+    Name of Subject: <input type="text" id="subjectName">
+    <br><br>
+    Mark: <input type="number" id="markInput">
+    <br><br>
+    <button onclick="calculateGrade()">Submit</button>
+
+    <div id="displayArea"></div>
+
+    <script>
+        function calculateGrade() {
+            let subject = document.getElementById('subjectName').value;
+            let markValue = document.getElementById('markInput').value;
+            let display = document.getElementById('displayArea');
+            let grade = "";
+
+            if (markValue === "") {
+                display.innerHTML = "Please enter a mark.";
+                return;
+            }
+
+            let mark = parseFloat(markValue);
+
+            switch (true) {
+                case (mark >= 90):
+                    grade = "A+";
+                    break;
+                case (mark >= 80 && mark<90):
+                    grade = "A";
+                    break;
+                case (mark >= 70 && mark<80):
+                    grade = "B+";
+                    break;
+                case (mark >= 60 && mark<70):
+                    grade = "C+";
+                    break;
+                case (mark >= 50 && mark<60):
+                    grade = "C";
+                    break;
+                default:
+                    grade = "Below 50%";
+            }
+
+            display.innerHTML = "<p>Subject: " + subject + "<br>Grade: " + grade + "</p>";
+        }
+    </script>
+
+</body>
+</html>

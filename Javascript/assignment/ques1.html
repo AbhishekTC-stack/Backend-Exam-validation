@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1</title>
+</head>
+<body>
+    <h1>JS Calculator</h1>
+    <label for="num1">Enter First Number: </label>
+    <input type="number" id="num1"> <br><br>
+
+    <label for="num2">Enter Second Number: </label>
+    <input type="number" id="num2"> <br><br>
+
+    <label for="operator">Enter Operator(+,-,*,/,%): </label>
+    <input type="text" id="operator"> <br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="output"></p>
+
+    <script>
+        function calculate(){
+    let num1 = parseFloat(document.getElementById('num1').value);
+    let num2 = parseFloat(document.getElementById('num2').value);
+    let operator = document.getElementById('operator').value;
+    let result;
+
+    switch(operator){
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        case '%':
+            result = num1 % num2;
+            break;
+        default:
+            result = 'Invalid operator';
+    }
+
+    document.getElementById('output').textContent = result;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Programs</title>
+</head>
+<body>
+
+<script>
+
+// -------------------------------
+// 1. Paragraph about yourself using createElement(), textContent & appendChild
+// -------------------------------
+let para = document.createElement("p");
+para.textContent = "Hi, I am Abhishek TC, a passionate learner who loves coding and web development.";
+document.body.appendChild(para);
+document.write("<br><br>");
+
+
+// -------------------------------
+// 2. Unordered list of cinemas using JavaScript
+// -------------------------------
+let ul = document.createElement("ul");
+let cinemas = ["PVR Cinemas", "INOX", "Carnival Cinemas", "Kairali Theatre"];
+
+cinemas.forEach(cinema => {
+    let li = document.createElement("li");
+    li.textContent = cinema;
+    ul.appendChild(li);
+});
+
+document.body.appendChild(ul);
+document.write("<br><br>");
+
+
+// -------------------------------
+// 3. Dropdown for programming languages using JavaScript
+// -------------------------------
+let select = document.createElement("select");
+let languages = ["JavaScript", "Python", "Java", "C++", "C#", "Kotlin"];
+
+languages.forEach(lang => {
+    let option = document.createElement("option");
+    option.textContent = lang;
+    select.appendChild(option);
+});
+
+document.body.appendChild(select);
+document.write("<br><br>");
+
+
+// -------------------------------
+// 4. Swap two numbers using temporary variable
+// -------------------------------
+let a = 5, b = 10;
+let temp = a;
+a = b;
+b = temp;
+
+document.write("Swap using temp variable: a=" + a + ", b=" + b + "<br><br>");
+
+
+// -------------------------------
+// 5. Swap two numbers without temporary variable
+// -------------------------------
+let x = 7, y = 3;
+x = x + y;
+y = x - y;
+x = x - y;
+
+document.write("Swap without temp variable: x=" + x + ", y=" + y + "<br><br>");
+
+
+// -------------------------------
+// 6. Convert Celsius to Fahrenheit
+// -------------------------------
+let celsius = 25;
+let fahrenheit = (celsius * 9/5) + 32;
+
+document.write("Celsius to Fahrenheit: " + fahrenheit + "°F<br><br>");
+
+
+// -------------------------------
+// 7. Square of a number
+// -------------------------------
+let num1 = 6;
+document.write("Square of 6 = " + (num1 * num1) + "<br><br>");
+
+
+// -------------------------------
+// 8. Cube of a number
+// -------------------------------
+let num2 = 4;
+document.write("Cube of 4 = " + (num2 ** 3) + "<br><br>");
+
+
+// -------------------------------
+// 9. Area calculations
+// -------------------------------
+let side = 5;
+let radius = 3;
+let length = 6, width = 4;
+let base = 8, height = 5;
+
+document.write("Area of Square = " + (side * side) + "<br>");
+document.write("Area of Circle = " + (3.14 * radius * radius) + "<br>");
+document.write("Area of Rectangle = " + (length * width) + "<br>");
+document.write("Area of Triangle = " + (0.5 * base * height) + "<br><br>");
+
+
+// -------------------------------
+// 10. Perimeter calculations
+// -------------------------------
+document.write("Perimeter of Square = " + (4 * side) + "<br>");
+document.write("Perimeter of Rectangle = " + 2 * (length + width) + "<br>");
+document.write("Perimeter of Circle = " + (2 * 3.14 * radius) + "<br>");
+document.write("Perimeter of Triangle = " + (side + base + height) + "<br><br>");
+
+
+// -------------------------------
+// 11. Simple Interest & Compound Interest
+// -------------------------------
+let p = 1000, r = 10, t = 2;
+
+let SI = (p * r * t) / 100;
+let CI = p * (Math.pow((1 + r / 100), t)) - p;
+
+document.write("Simple Interest = " + SI + "<br>");
+document.write("Compound Interest = " + CI.toFixed(2) + "<br><br>");
+
+
+// -------------------------------
+// 12. Largest among two numbers
+// -------------------------------
+let n1 = 25, n2 = 40;
+document.write("Largest among two: " + (n1 > n2 ? n1 : n2) + "<br><br>");
+
+
+// -------------------------------
+// 13. Smallest among three numbers
+// -------------------------------
+let a1 = 12, a2 = 5, a3 = 20;
+let smallest = Math.min(a1, a2, a3);
+
+document.write("Smallest among three: " + smallest + "<br><br>");
+
+
+// -------------------------------
+// 14. Check zero, positive, negative
+// -------------------------------
+let check = -8;
+
+if (check > 0) {
+    document.write("Number is Positive<br><br>");
+} else if (check < 0) {
+    document.write("Number is Negative<br><br>");
+} else {
+    document.write("Number is Zero<br><br>");
+}
+
+
+// -------------------------------
+// 15. Voting eligibility using ternary operator
+// -------------------------------
+let age = 19;
+let message = (age >= 18) ? "Eligible for voting" : "Not eligible for voting";
+
+document.write(message + "<br><br>");
+
+</script>
+
+</body>
+</html>

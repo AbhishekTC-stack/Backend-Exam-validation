@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let addarrow = (a,b) => a+b;
+        document.write('Arrow functon output: ' , addarrow(10,5));
+        document.write(`<br>`)
+        let square = a => a*a
+        document.write(`The square of a is `,square(10));
+
+        let person ={
+            name: '<br>Ram',
+            Age: 22,
+            Address:'Trivandrum',
+            greet:function(){
+               
+                setTimeout(()=>
+            {
+                document.write(`Hello` + this.name);
+            },10000);
+
+            }
+         }
+     person.greet();
+    </script>
+</body>
+</html>
