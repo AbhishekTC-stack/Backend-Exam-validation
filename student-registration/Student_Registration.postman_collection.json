@@ -1,0 +1,120 @@
+{
+  "info": {
+    "name": "Student Course Registration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "studentId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "1. Add student (201)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status is 201', () => pm.response.to.have.status(201));",
+              "const json = pm.response.json();",
+              "if (json.data && json.data._id) { pm.collectionVariables.set('studentId', json.data._id); }"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Anjali Menon\",\n  \"email\": \"anjali@example.com\",\n  \"department\": \"IT\",\n  \"course\": \"Full Stack Development\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "2. Add duplicate email (409)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Another Person\",\n  \"email\": \"anjali@example.com\",\n  \"department\": \"CSE\",\n  \"course\": \"Data Structures\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "3. Add invalid input (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"A\",\n  \"email\": \"not-an-email\",\n  \"department\": \"\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "4. Get all students (200)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "5. Filter by department (200)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/students?department=IT",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students"],
+          "query": [{ "key": "department", "value": "IT" }]
+        }
+      }
+    },
+    {
+      "name": "6. Get student by ID (200)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/students/{{studentId}}", "host": ["{{baseUrl}}"], "path": ["api", "students", "{{studentId}}"] }
+      }
+    },
+    {
+      "name": "7. Get student - not found (404)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/students/64b7f0c2a1b2c3d4e5f60718", "host": ["{{baseUrl}}"], "path": ["api", "students", "64b7f0c2a1b2c3d4e5f60718"] }
+      }
+    },
+    {
+      "name": "8. Get student - invalid ID (400)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/students/123", "host": ["{{baseUrl}}"], "path": ["api", "students", "123"] }
+      }
+    },
+    {
+      "name": "9. Update student (200)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Anjali Menon\",\n  \"email\": \"anjali@example.com\",\n  \"department\": \"IT\",\n  \"course\": \"Backend Engineering\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/students/{{studentId}}", "host": ["{{baseUrl}}"], "path": ["api", "students", "{{studentId}}"] }
+      }
+    },
+    {
+      "name": "10. Delete student (200)",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{baseUrl}}/api/students/{{studentId}}", "host": ["{{baseUrl}}"], "path": ["api", "students", "{{studentId}}"] }
+      }
+    }
+  ]
+}
